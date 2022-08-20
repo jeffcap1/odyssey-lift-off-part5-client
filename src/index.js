@@ -4,7 +4,7 @@ import GlobalStyles from './styles';
 import Pages from './pages';
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 
-const backendUrl = process.env.NODE_ENV === 'production' ? 'https://jeffcap1-server-catstronauts.herokuapp.com/' : 'http://localhost:4000';
+const backendUrl = process.env.REACT_APP_API_URL;
 
 console.log(process.env)
 console.log({ backendUrl });
