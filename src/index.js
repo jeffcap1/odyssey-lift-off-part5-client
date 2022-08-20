@@ -4,12 +4,13 @@ import GlobalStyles from './styles';
 import Pages from './pages';
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 
+const backendUrl = process.env.NODE_ENV === 'production' ? 'https://jeffcap1-server-catstronauts.herokuapp.com/' : 'http://localhost:4000';
+
 console.log(process.env)
-console.log({ env: process.env.NODE_ENV });
-console.log({ uri: process.env.NODE_ENV === 'production' ? 'https://jeffcap1-server-catstronauts.herokuapp.com/' : 'http://localhost:4000' });
+console.log({ backendUrl });
 
 const client = new ApolloClient({
-  uri: process.env.NODE_ENV === 'production' ? 'https://jeffcap1-server-catstronauts.herokuapp.com/' : 'http://localhost:4000',
+  uri: backendUrl,
   cache: new InMemoryCache(),
   name: "web",
   version: "1.0",
